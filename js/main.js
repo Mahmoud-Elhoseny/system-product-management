@@ -40,7 +40,7 @@ submit.onclick = function () {
     category: category.value.toLowerCase(),
     total: total.innerHTML,
   };
-  if (title.value != "" && count.value<=60 && price.value != "" ) {
+  if (title.value != "" && count.value <= 60 && price.value != "") {
     if (mood === "create") {
       if (newPro.count > 1) {
         for (let i = 0; i < newPro.count; i++) {
