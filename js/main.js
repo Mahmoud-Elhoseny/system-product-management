@@ -40,20 +40,23 @@ submit.onclick = function () {
     category: category.value.toLowerCase(),
     total: total.innerHTML,
   };
-  if (mood === "create") {
-    if (newPro.count > 1) {
-      for (let i = 0; i < newPro.count; i++) {
+  if (title.value != "" && count.value<=60 && price.value != "" ) {
+    if (mood === "create") {
+      if (newPro.count > 1) {
+        for (let i = 0; i < newPro.count; i++) {
+          dataPro.push(newPro);
+        }
+      } else {
         dataPro.push(newPro);
       }
     } else {
-      dataPro.push(newPro);
+      dataPro[tmp] = newPro;
+      mood = "create";
+      submit.innerHTML = "create";
+      count.style.display = "block";
     }
-  } else {
-    dataPro[tmp] = newPro;
-    mood = "create";
-    submit.innerHTML = "create";
-    count.style.display = "block";
   }
+
   localStorage.setItem("product", JSON.stringify(dataPro));
   clearData();
   displayProduct();
