@@ -5,12 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Management System</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&family=Roboto:wght@100&family=Work+Sans:wght@400;500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="all.min.css">
-<link rel="stylesheet" href="bootstrap.min.css">
-<link rel="stylesheet" href="fontawesome.min.css">
-<link rel="stylesheet" href="normalize.css">
-<link rel="stylesheet" href="master.css">
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="master.css">
+    <style>
+        /* Add responsive styles here */
+        @media only screen and (max-width: 600px) {
+            .crud {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 <body>
 
@@ -37,14 +41,14 @@
         <div class="search-block">
             <input type="text" id="search" placeholder="search" onkeyup="searchData(this.value)">
             <div class="btn-search">
-            <button onclick="getSearchMood(this.id)" id="search-title">search by title</button>
-            <button onclick="getSearchMood(this.id)" id="search-category">search by category</button>
-        </div>
+                <button onclick="getSearchMood(this.id)" id="search-title">search by title</button>
+                <button onclick="getSearchMood(this.id)" id="search-category">search by category</button>
+            </div>
         </div>
 
-<div id="deleteAll" class="mt-3 mb-3">
+        <div id="deleteAll" class="mt-3 mb-3">
 
-</div>
+        </div>
         <table>
             <tr>
                 <th>id</th>
@@ -60,33 +64,10 @@
             </tr>
             <tbody id="tbody">
 
-
-
-
             </tbody>
         </table>
     </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <script src="bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>
