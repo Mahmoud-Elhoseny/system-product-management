@@ -100,21 +100,4 @@ th, td {
     border: 1px solid #fff;
 }
 
-@media only screen and (max-width: 600px) {
-    .inputs {
-        display: block;
 
-    }
-
-    .price input {
-        width: 100%;
-    }
-
-    .output {
-        overflow-x: auto;
-    }
-
-    table {
-        font-size: 12px;
-    }
-}

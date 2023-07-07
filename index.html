@@ -18,56 +18,119 @@
 </head>
 <body>
 
-<div class="crud">
-    <div class="head">
-        <h1>cruds</h1>
-        <p>product management system</p>
-    </div>
-    <div class="inputs">
-        <input type="text" placeholder="title" id="title">
-        <div class="price">
-            <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
-            <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
-            <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
-            <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
-            <small id="total">0</small>
-        </div>
-        <input type="number" placeholder="count" id="count">
-        <input type="text" placeholder="category" id="category">
-        <button id="submit">create</button>
+    <style>
+        /* Add responsive styles here */
+        @media only screen and (max-width: 600px) {
+            .crud {
+                width: 100%;
+            }
 
-    </div>
-    <div class="output">
-        <div class="search-block">
-            <input type="text" id="search" placeholder="search" onkeyup="searchData(this.value)">
-            <div class="btn-search">
-                <button onclick="getSearchMood(this.id)" id="search-title">search by title</button>
-                <button onclick="getSearchMood(this.id)" id="search-category">search by category</button>
+            .inputs {
+                display: block;
+            }
+
+            .price input {
+                width: 100%;
+            }
+
+            .output {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .search-block {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            table {
+                width: 100%;
+                max-width: 600px;
+                margin: 20px auto 0;
+                font-size: 12px;
+            }
+
+            table thead {
+                display: none;
+                /* إخفاء عناصر thead في وضعية الجوال */
+            }
+
+            table tbody {
+                display: block;
+                /* تحويل الجسم إلى عنصر بلوك ليمكن ترتيب الصفوف بشكل عمودي */
+            }
+
+            table tbody tr {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 20px;
+                /* توسيع المساحة بين الصفوف في وضعية الجوال */
+            }
+
+            table tbody td {
+                display: block;
+                /* تحويل الخلية إلى عنصر بلوك ليمكن ترتيب العناصر بشكل عمودي */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="crud">
+        <div class="head">
+            <h1>cruds</h1>
+            <p>product management system</p>
+        </div>
+
+        <div class="inputs">
+            <input type="text" placeholder="title" id="title">
+            <div class="price">
+                <input onkeyup="getTotal()" type="number" placeholder="price" id="price">
+                <input onkeyup="getTotal()" type="number" placeholder="taxes" id="taxes">
+                <input onkeyup="getTotal()" type="number" placeholder="ads" id="ads">
+                <input onkeyup="getTotal()" type="number" placeholder="discount" id="discount">
+                <small id="total">0</small>
             </div>
+            <input type="number" placeholder="count" id="count">
+            <input type="text" placeholder="category" id="category">
+            <button id="submit">create</button>
+
         </div>
+        <div class="output">
+            <div class="search-block">
+                <input type="text" id="search" placeholder="search" onkeyup="searchData(this.value)">
+                <div class="btn-search">
+                    <button onclick="getSearchMood(this.id)" id="search-title">search by title</button>
+                    <button onclick="getSearchMood(this.id)" id="search-category">search by category</button>
+                </div>
+            </div>
+            <div id="deleteAll" class="mt-3 mb-3">
+            </div>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>id</td>
+                        <td>title</td>
+                        <td>price</td>
+                        <td>taxes</td>
+                        <td>ads</td>
+                        <td>discount</td>
+                        <td>total</td>
+                        <td>category</td>
+                        <td>update</td>
+                        <td>delete</td>
+                    </tr>
+                    <tbody id="tbody">
 
-        <div id="deleteAll" class="mt-3 mb-3">
-
+                    </tbody>
+                </tbody>
+            </table>
         </div>
-        <table>
-            <tr>
-                <th>id</th>
-                <th>title</th>
-                <th>price</th>
-                <th>taxes</th>
-                <th>ads</th>
-                <th>discount</th>
-                <th>total</th>
-                <th>category</th>
-                <th>update</th>
-                <th>delete</th>
-            </tr>
-            <tbody id="tbody">
-
-            </tbody>
-        </table>
     </div>
-</div>
 
 <script src="bootstrap.bundle.min.js"></script>
 <script src="main.js"></script>
